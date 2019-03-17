@@ -5,6 +5,7 @@ class BaseConfig:
     """Base configs"""
     TESTING = False
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    SECRET_KEY = 'my_precious'
 
 
 class DevelopmentConfig(BaseConfig):
@@ -15,7 +16,7 @@ class DevelopmentConfig(BaseConfig):
 class TestingConfig(BaseConfig):
     """Testing configs"""
     TESTING = True
-    SQLALCHECMY_DATABASE_URI = os.getenv('DATABASE_TEST_URL')
+    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_TEST_URL')
 
 
 class ProductionConfig(BaseConfig):
